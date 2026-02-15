@@ -3,9 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <link rel = "stylesheet" href = "css/style.css">
+    <title>Portfolio Website</title>
+
+    <script> /*Resets back to top on refresh*/
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
+        window.addEventListener("load", () => {
+            window.scrollTo(0, 0);
+        });
+    </script>
 </head>
 <body>
-    <h1>Test</h1>
+    <div>
+        <h1 class = "title">Dylan Santos</h1>
+        <h3 class = "subtitle">Computer Science Undergraduate Student</h3>
+    </div>
+
+    <br>
+
+    <p class = "description">
+        Hey, you found my website! Here you can find all information about my career & college plans, any
+        necessary contact information (inclduing GitHub, LinkedIn, etc.), and some the mix of projects I've been working on.
+        This page recieves constant updates so make sure to keep an eye open (source code can be found on GitHub), and thanks for stopping by!
+    </p>
+
+    <div class="content">
+        <div class="col-header">
+            <h2><a class="scroll-link" data-target="about">About Me</a></h2>
+            <div class="col-subheader">
+                <h4>A little about myself, my plans, & goals.</h4>
+            </div>
+        </div>
+
+        <div class="col-header">
+            <h2><a class="scroll-link" data-target="projects">Contact</a></h2>
+            <div class="col-subheader">
+                <h4>All social links can be found here.</h4>
+            </div>
+        </div>
+
+        <div class="col-header">
+            <h2><a class="scroll-link" data-target="contact">Projects</a></h2>
+            <div class="col-subheader">
+                <h4>Some of my complete, uncomplete, & planned projects.</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class = "scroll-gap"></div>
+
+    <div>
+        <h2 id="about">About Me</h2>
+        <h2 id="contact">Contact</h2>
+        <h2 id="projects">Projects</h2>
+    </div>
+
+    <script> /*Enables anchor tags*/
+        document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll('.scroll-link').forEach(link => {
+            link.addEventListener('click', e => {
+            e.preventDefault();
+
+            const id = link.dataset.target;
+            const target = document.getElementById(id);
+
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+            });
+        });
+        });
+    </script>
 </body>
 </html>
