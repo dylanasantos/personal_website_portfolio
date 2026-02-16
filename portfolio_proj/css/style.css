@@ -1,0 +1,327 @@
+.page-scale {
+  transform: scale(1);
+  transform-origin: top center;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgb(20,20,20);
+  opacity: 1;
+  pointer-events: none;
+  animation: pageFadeOut 1.75s ease-out forwards;
+  z-index: 3;
+}
+
+body {
+  --cell: 60px;
+  --line: 1px;
+  --pad: 10px;
+
+  position: relative;
+  background-color: rgb(20, 20, 20);
+  
+  z-index: 0;
+
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.2) 0 var(--line),
+      transparent var(--line) var(--cell)
+    ),
+    repeating-linear-gradient(
+      to right,
+      transparent 0 10px,
+      transparent 10px calc(10px + var(--pad)),
+      rgba(255,255,255,0.2)
+        calc(10px + var(--pad))
+        calc(10px + var(--pad) + var(--line)),
+      transparent
+        calc(10px + var(--pad) + var(--line))
+        calc(10px + var(--cell))
+    );
+
+  background-attachment:fixed;
+  background-size: auto;
+
+  scroll-margin-top: 80px
+}
+
+body > * {
+  position: relative;
+  z-index: 2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: calc(40vh + 4px);
+  pointer-events: none;
+  z-index: 1;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(20,20,20,0) 0%,
+    rgba(20,20,20,0.7) 30%,
+    rgba(20,20,20,0.9) 60%,
+    rgba(20,20,20,1) 100%
+  );
+}
+
+html {
+  --text-scale: 1;
+  scroll-behavior: smooth;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 50;
+  font-size: calc(60px * var(--text-scale));;
+  margin-bottom: -20px;
+}
+
+h2 {
+  color: white;
+  text-align: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 50;
+  font-size: calc(45px * var(--text-scale));;
+  margin-bottom: -20px;
+  margin-top: 20px;
+}
+
+h2 .scroll-link {
+  display: inline-block;
+}
+
+h3 {
+  color: white;
+  text-align: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 50;
+  font-size: calc(30px * var(--text-scale));
+}
+
+h4 {
+  color: white;
+  text-align: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 50;
+  font-size: calc(20px * var(--text-scale));
+}
+
+p {
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 50;
+  font-size: calc(20px * var(--text-scale));
+}
+
+i {
+  padding-left: 30px;
+  padding-bottom: 20px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 40%;
+  height: 2px;
+  background: white;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+a:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+
+.title {
+    opacity: 0;
+    animation: fadeText .75s ease-in forwards;
+    animation-delay: 0s;
+}
+
+.subtitle {
+    opacity: 0;
+    animation: fadeText 0.75s ease-in forwards;
+    animation-delay: 0.225s;
+    border-bottom: solid white 2px;
+
+    width: 50%;
+    margin: 20px auto 45px;
+    text-align: center; 
+
+    padding: 10px;
+}
+
+.title-description {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 75px;
+
+  opacity: 0;
+  animation: fadeText 0.75s ease-in forwards;
+  animation-delay: 0.5s;
+}
+
+.col-content {
+  display: flex;
+  flex-direction: row; 
+  justify-content:center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.col-header {
+  flex: 1;
+  min-width: 0;
+  max-width: 25%; 
+
+  border: 2px solid white;
+  border-radius: 15px;
+
+  opacity: 0;
+  animation: fadeText 1.5s ease-out forwards;
+  animation-delay: .875s;
+}
+
+.col-subheader {
+    opacity: 0;
+    animation: fadeText 1s ease-out forwards;
+    animation-delay: 1s;
+    padding: 0 5px;
+}
+
+.description-title h1 {
+  font-size: calc(80px * var(--text-scale));
+  padding-bottom: 20px;
+}
+
+.description-content {
+  width: 60%;
+  margin: 20px auto 45px;
+}
+
+.description-content p{
+  font-size: calc(26px * var(--text-scale));
+  border: solid white 2px;
+  padding: 25px;
+  border-radius: 15px;
+}
+
+.description-header {
+    font-size: calc(52px * var(--text-scale));
+    text-align: left;
+
+    padding-bottom: 100px;
+
+    opacity: 0;
+    animation: fadeText 1.5s ease-out forwards;
+    animation-delay: .875s;
+}
+
+.description-header h2 {
+  font-size: 52px * var(--text-scale);
+  text-align: left;
+
+  padding-left: calc(100px * var(--text-scale));
+  padding-top: 20px;
+  
+  margin-top: -20px;
+}
+
+.description-header h3 {
+  font-size: calc(38px * var(--text-scale));;
+  text-align: left;
+
+  padding-left: 30px;
+  padding-top: 15px;
+  margin-top: 25px;
+  margin-bottom: -20px;
+}
+
+.scroll-gap {
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+}
+
+.scroll-half-gap {
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  pointer-events: none;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.ceiling-link {
+
+  position: fixed;
+  bottom: 45px;
+  left: 20px;
+
+  padding-bottom: 10px;
+
+  background: rgb(20,20,20);
+
+  border: solid white 2px;
+  border-radius: 15px;
+
+  cursor: pointer;
+}
+.col-header {
+  flex: 1 1 0;
+  max-width: 25%;
+}
+
+@keyframes pageFadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes fadeText {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@media (max-width: 900px) {
+  .page-scale { transform: scale(0.75); }
+  .description-content { width: 90%; }
+  
+  html { --text-scale: 0.75; }
+
+  .col-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .col-header {
+    flex: none;
+    width: 90%;
+    max-width: 90%;
+  }
+}
