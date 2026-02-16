@@ -292,6 +292,13 @@ a:hover::after {
   border-radius: 15px;
 
   cursor: pointer;
+
+  opacity: 0;
+
+  animation: fadeText 1s ease-out forwards;
+  animation-delay: 1.25s;
+
+  z-index: 99;
 }
 .col-header {
   flex: 1 1 0;
