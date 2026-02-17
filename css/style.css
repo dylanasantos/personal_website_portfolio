@@ -191,7 +191,7 @@ a:hover::after {
 }
 
 .col-header {
-  flex: 1;
+  flex: 1 1 0;
   min-width: 0;
   max-width: 25%; 
 
@@ -300,10 +300,6 @@ a:hover::after {
 
   z-index: 99;
 }
-.col-header {
-  flex: 1 1 0;
-  max-width: 25%;
-}
 
 @keyframes pageFadeOut {
   from { opacity: 1; }
@@ -319,7 +315,7 @@ a:hover::after {
   .page-scale { transform: scale(0.75); }
   .description-content { width: 90%; }
   
-  html { --text-scale: 0.75; }
+  html { --text-scale: 0.85; }
 
   .col-content {
     flex-direction: column;
