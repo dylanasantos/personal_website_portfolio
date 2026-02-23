@@ -312,8 +312,11 @@ a:hover::after {
 }
 
 @media (max-width: 900px) {
-  .page-scale { transform: scale(0.75); }
-  .description-content { width: 90%; }
+  .page-scale { 
+    transform: scale(0.75);
+  }
+
+  .description-content { width: 100%; }
   
   html { --text-scale: 0.85; }
 
@@ -326,5 +329,10 @@ a:hover::after {
     flex: none;
     width: 90%;
     max-width: 90%;
+  }
+
+  .description-header h2{
+    text-align: center;
+    padding-left: 0px;
   }
 }
