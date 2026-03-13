@@ -337,6 +337,18 @@ a:hover::after {
   html { --text-scale: 0.85; }
 
   .description-content { width: 70%; }
+  .description-header h2 {
+    width: 95vw; 
+    
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
+    white-space: normal;
+  }
 
   .col-content {
     flex-direction: column;
