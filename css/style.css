@@ -316,11 +316,12 @@ a:hover::after {
 }
 .python { background-color: #3776ab; } /* Modifier classes for .bubble */
 .cpp    { background-color: #00599c; }
-.java   { background-color: #f89820; }
+.java   { background-color: #d67f15; }
 .html   { background-color: #e34c26; }
 .css    { background-color: #9c049c; }
 .js     { background-color: #bcaa30; }
 .sql    { background-color: #00159c; }
+.library { background-color: #0dad42; }
 
 @keyframes pageFadeOut {
   from { opacity: 1; }
