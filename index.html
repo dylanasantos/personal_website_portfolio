@@ -5,16 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href = "css/style.css">
     <title>Dylan Santos</title>
-
-    <script> /*Resets back to top on refresh*/
-        if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
-        }
-
-        window.addEventListener("load", () => {
-            window.scrollTo(0, 0);
-        });
-    </script>
 </head>
 <body>
     <h1 class = "title">Dylan Santos</h1>
@@ -117,16 +107,17 @@
                 </p>
                 <span><h4 class = "bubble cpp" >C++</h4> <h4 class = "bubble html" >HTML</h4></span>
 
-                <h3><a href = "https://github.com/dylanasantos/FlappyJava">FlappyJava:</a></h3>
+                <h3><a href = "https://github.com/dylanasantos/CIPHER-Game-Demo">C.I.P.H.E.R. Game Demo:</a></h3>
                 <p>
-                    FlappyJava is intended to be a fun-to-make, and simple program meant to simulate the popular game "Flappy Bird" on the shell using ASCII formatting. 
-                    This program was meant to be a small introduction into the use of the JFrame KeyDetection interface, on top of standard O.O.P. application.
+                    This was the personally coded reference to C.I.P.H.E.R's 2026 Spring Game Jam. Members were tasked with developing a game in any any language or game engine of their choice; this project uses
+                    the javafx library to develop a basic game in Java to help member's understand an idea of what the final results of games should look like. This project covers advanced Java strategies such as 
+                    custom exceptions, interfaces, lambda functions, abstract classes, and much more.
                 </p>
-                <span><h4 class = "bubble java" >Java</h4></span>
+                <span><h4 class = "bubble java" >Java</h4> <h4 class = "bubble library">javafx</h4></span>
 
                 <h3><a href = "https://github.com/dylanasantos/personal_website_portfolio">This Website Portfolio:</a></h3>
                 <p>
-                    This website itself was to help my re-introduction into HTML, CSS, and start smart use of JavaScript. Over time this website will likely shift in overall design (given it's still an active project).
+                    This website itself was to help my re-introduction into HTML, CSS, and start the small use of JavaScript. Over time this website will likely shift in overall design (given it's still an active project).
                     All source code is posted on my GitHub for public use. However, I warrant any user that the code is going to go through numerous optimizations & fixes (use at your own risk).
                 </p>
                 <span><h4 class = "bubble html" >HTML</h4> <h4 class = "bubble css" >CSS</h4> <h4 class = "bubble js">JavaScript</h4></span>
@@ -146,11 +137,11 @@
             <div class = "description-header">
                 <h2>Planned Projects:</h2>
 
-                <h3>C++ Video Game</h3>
+                <h3>Customized Project Planner</h3>
                 <p>
-                    Applying external libraries & understanding how to properly function with them in C++, on top of advanced-level techniques such as multithreading, and understanding C++ logic on larger-scale programs.
+
                 </p>
-                <span><h4 class = "bubble cpp" >C++</h4> <h4 class = "bubble library" >OpenGL</h4></span>
+                <span><h4 class = "bubble cpp" >C++</h4> <h4 class = "bubble library" >Qt</h4></span>
 
                 <h3>Python Paser & Linter</h3>
                 <p>
@@ -290,36 +281,7 @@
 
     <div class="scroll-quarter-gap"></div>
 
-    <script>
-    document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll('.link').forEach(link => {
-        link.addEventListener('click', e => {
-        const id = link.dataset.target;
-        const target = document.getElementById(id);
-
-        if (target) {
-            e.preventDefault(); // only stop navigation if scrolling
-            target.scrollIntoView({ behavior: 'smooth' });
-        }
-        });
-    });
-    });
-    </script>
-
-    <script>
-    document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll('.ceiling-link').forEach(link => {
-        link.addEventListener('click', e => {
-        const id = link.dataset.target;
-        const target = document.getElementById(id);
-
-        if (target) {
-            e.preventDefault(); // only stop navigation if scrolling
-            target.scrollIntoView({ behavior: 'smooth' });
-        }
-        });
-    });
-    });
-    </script>
+    <!-- For scrolling to local website links -->
+    <script src = "js/navigateToItem.js"></script> 
 </body>
 </html>
